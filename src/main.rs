@@ -42,7 +42,7 @@ async fn main() {
                     result = rx.recv() => {
                         let (msg, other_addr) = result.unwrap();
 
-                        // avoid seeing the message two times when you are the sender
+                        // avoid seeing the message two times when you are the sender.
                         if addr != other_addr {
                             // the socket writes the line back to the client
                             writer.write_all(msg.as_bytes()).await.unwrap();
